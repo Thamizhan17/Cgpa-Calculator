@@ -1,7 +1,12 @@
 import { Hono } from 'hono';
 import { GoogleGenAI } from '@google/genai';
 
+interface Env {
+  GEMINI_API_KEY: string;
+}
+
 const app = new Hono<{ Bindings: Env }>();
+
 
 app.post('/extract-cgpa', async (c) => {
   try {

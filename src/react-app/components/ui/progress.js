@@ -1,0 +1,7 @@
+import { jsx as _jsx } from "react/jsx-runtime";
+import { Progress as ProgressPrimitive } from "radix-ui";
+import { cn } from "@/react-app/lib/utils";
+function Progress({ className, value, ...props }) {
+    return (_jsx(ProgressPrimitive.Root, { "data-slot": "progress", className: cn("bg-muted h-3 rounded-4xl relative flex w-full items-center overflow-x-hidden", className), ...props, children: _jsx(ProgressPrimitive.Indicator, { "data-slot": "progress-indicator", className: "bg-primary size-full flex-1 transition-all", style: { transform: `translateX(-${100 - (value || 0)}%)` } }) }));
+}
+export { Progress };
